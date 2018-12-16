@@ -59,6 +59,9 @@ const convertJsonObject = function(toBeChangedJson){
             }
         } else {
            id = JsonObj['id'] || id; 
+           if (!id){
+               throw new Error('all flattened elements within arrays must contain an id property');
+           }
            if (!flattenedJson[parent]){
                flattenedJson[parent] = [];
            }

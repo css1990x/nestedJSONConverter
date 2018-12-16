@@ -1,0 +1,23 @@
+{
+  "name": "nestedjsonconverter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/css1990x/nestedJSONConverter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/css1990x/nestedJSONConverter/issues"
+  },
+  "homepage": "https://github.com/css1990x/nestedJSONConverter#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
+}

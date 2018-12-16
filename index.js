@@ -26,15 +26,16 @@ const convertJsonObject = function(toBeChangedJson){
         let flattenedJsonValue = {}; 
         let nextConvertJsonCalls = []; 
         let valid; 
+        let nextParentTitle
         if (!isInArray){
             for (let key in JsonObj){
                 if (typeof JsonObj[key] !== 'object'){
                     flattenedJsonValue[key] = JsonObj[key]; 
                 } else if (!Array.isArray(JsonObj[key])) {
-                    let nextParentTitle = `${parent}_${key}`; 
+                    nextParentTitle = `${parent}_${key}`; 
                     nextConvertJsonCalls.push([JsonObj[key], nextParentTitle, false]);
                 } else {
-                    let nextParentTitle = `${parent}_${key}`;
+                    nextParentTitle = `${parent}_${key}`;
                     nextConvertJsonCalls.push([JsonObj[key], nextParentTitle, true]); 
                 }
             }
@@ -79,7 +80,7 @@ const convertJsonObject = function(toBeChangedJson){
                if (typeof JsonObj[key] !== 'object'){
                    flattenedJsonValue[key] = JsonObj[key]; 
                } else {
-                let nextParentTitle = `${parent}_${key}`;
+                nextParentTitle = `${parent}_${key}`;
                 let value = JsonObj[key]; 
                    if (!Array.isArray(JsonObj[key])){
                        nextConvertJsonCalls.push([value, nextParentTitle, false]); 
